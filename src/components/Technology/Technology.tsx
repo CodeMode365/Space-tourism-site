@@ -35,7 +35,7 @@ const Technology = () => {
             <div className="options">
               {[...techData].map((data, ind) => (
                 <div
-                  className={`option ${
+                  className={`option cursor-pointer ${
                     currentTechInd == ind ? "active-tech" : ""
                   }`}
                   key={data.name + ind}

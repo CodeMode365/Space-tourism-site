@@ -8,9 +8,18 @@
     background-color: white !important;
   }
 
+  @media screen and (min-width: 1024px) {
+    overflow-y: hidden;
+  }
   @media screen and (max-width: 768px) {
     & {
       background-image: url("./assets/crew/background-crew-tablet.jpg");
+    }
+    .heading-4{
+      font-size: 2.5rem;
+    }
+    .heading-2{
+      font-size: 3.5rem;
     }
     .wrapper {
       display: flex;
@@ -46,7 +55,7 @@
     .circle {
       width: 18px;
       height: 18px;
-      @apply rounded-full bg-gray-400 mx-4 cursor-pointer;
+      @apply rounded-full bg-gray-600 mx-4 cursor-pointer;
     }
   }
 }

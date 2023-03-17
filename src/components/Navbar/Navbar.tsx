@@ -20,14 +20,14 @@ const Navbar: React.FC = (): JSX.Element => {
         <NavLink to={"/"}>
           <li>00 Home</li>
         </NavLink>
-        <NavLink to={"/crew"}>
-          <li>01 Crew</li>
-        </NavLink>
         <NavLink to={"/destination"}>
-          <li>03 Destination</li>
+          <li>01 Destination</li>
+        </NavLink>
+        <NavLink to={"/crew"}>
+          <li>02 Crew</li>
         </NavLink>
         <NavLink to={"/technology"}>
-          <li>04 Technology</li>
+          <li>03 Technology</li>
         </NavLink>
       </ul>
       <div className="hamburger" id="hamburger">
