@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "CodeMode365(Pabin)",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
