@@ -1,0 +1,15 @@
+#home-container {
+  background-image: url("./assets/home/background-home-desktop.jpg");
+  @media screen and (max-width: 768px) {
+    & {
+      background-image: url("./assets/home/background-home-tablet.jpg");
+    }
+  }
+  @media screen and (max-width: 375px) {
+    & {
+      background-imag.container{
+        gap: 15px;
+      }e: url("./assets/home/background-home-mobile.jpg");
+    }
+  }
+}

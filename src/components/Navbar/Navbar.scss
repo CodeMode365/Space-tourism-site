@@ -1,0 +1,89 @@
+#nav-bar {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  @apply absolute text-white z-50 top-20 flex flex-row items-center justify-between w-full;
+
+  #logo {
+    @apply ml-14;
+  }
+  #hamburger {
+    display: none;
+  }
+  ul {
+    @apply flex items-center justify-around w-2/4 absolute right-0 h-auto backdrop-blur-lg;
+    padding-block: 20px;
+    padding-right: 50px;
+    padding-left: 25px;
+    background-color: rgba(116, 115, 115, 0.2);
+    &::before {
+      content: "";
+      width: 70%;
+      height: 1px;
+      @apply absolute left-0 bottom-2/4 z-50;
+      background: rgb(126, 124, 124);
+      transform: translateX(-95%);
+    }
+
+    li {
+      font-size: 20px;
+      letter-spacing: 2.7px;
+      text-transform: uppercase;
+      padding-block: 4px;
+    }
+    li a {
+      @apply mx-6;
+    }
+    .active {
+      @apply relative;
+
+      &::after {
+        content: "";
+        @apply w-full bg-white absolute bottom-0 left-0;
+        height: 2px;
+        transition: 0.4s;
+      }
+      &:hover::after {
+        width: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #nav-bar {
+    @apply top-0 fixed py-5 backdrop-blur-xl;
+    background: hsl(230, 35%, 7%);
+    .visible {
+      transform: translateX(30%) !important;
+    }
+    ul {
+      // display: none;
+      @apply absolute top-24 flex-col h-screen w-full backdrop-blur-3xl translate-x-full items-start justify-start;
+      padding-left: 15px;
+      background: hsla(230, 35%, 7%, 0.95);
+      backdrop-filter: blur;
+      transition: 0.5s;
+
+      &::before {
+        display: none;
+      }
+      li {
+        margin: 0;
+        padding: 0;
+        padding-block: 30px;
+      }
+      li a {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    #logo img {
+      height: 4rem;
+      width: 4rem;
+    }
+    #hamburger {
+      display: block;
+      @apply absolute right-14 text-5xl;
+    }
+  }
+}

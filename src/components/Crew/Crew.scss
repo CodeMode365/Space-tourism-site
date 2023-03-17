@@ -1,0 +1,52 @@
+#crew-container {
+  background-image: url("./assets/crew/background-crew-desktop.jpg");
+
+  .c1 {
+    transform: translateY(-20%);
+  }
+  .active-crew {
+    background-color: white !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      background-image: url("./assets/crew/background-crew-tablet.jpg");
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column-reverse !important;
+    }
+    .c1 {
+      translate: 0 20%;
+    }
+    .crew-title {
+      @apply absolute top-20 -translate-y-64 left-2/4 w-full -translate-x-2/4;
+    }
+    .hero-img {
+      @apply mx-auto -mb-10;
+    }
+    .info {
+      @apply mt-12 mb-16;
+    }
+    .options-box {
+      @apply w-full items-center justify-center relative bottom-10;
+    }
+    .infos {
+      @apply flex flex-col-reverse;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    & {
+      background-image: url("./assets/crew/background-crew-mobile.jpg");
+    }
+  }
+  .options-box {
+    @apply flex-row w-full translate-y-28 h-5 flex my-16;
+
+    .circle {
+      width: 18px;
+      height: 18px;
+      @apply rounded-full bg-gray-400 mx-4 cursor-pointer;
+    }
+  }
+}

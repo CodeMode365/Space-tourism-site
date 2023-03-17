@@ -1,0 +1,118 @@
+$font1: "Barlow Condensed", sans-serif;
+$font2: "Bellefair", serif;
+$dim-white: rgb(183, 181, 204);
+
+@mixin flexing($x1, $x2) {
+  display: flex;
+  align-items: $x1;
+  justify-content: $x2;
+}
+
+main {
+  @apply bg-center bg-cover w-full h-full absolute left-0 top-0 backdrop-blur-3xl;
+  @include flexing(center, center);
+  background-attachment: fixed;
+
+  .wrapper {
+    @apply translate-y-1/4;
+    @include flexing(center, space-between);
+
+    .container {
+      #hero-img {
+        @apply text-black bg-white rounded-full;
+        font-family: $font2;
+        width: 250px;
+        height: 250px;
+        font-size: 5rem;
+        font-weight: 200;
+        @include flexing(center, center);
+      }
+    }
+
+    .break {
+      border: none;
+      height: 1px;
+      box-shadow: 0 0 0.5px white;
+    }
+  }
+
+  .heading-1 {
+    font-family: $font2;
+    font-size: 13rem;
+    letter-spacing: 2rem;
+    font-weight: 500;
+    @apply text-white uppercase;
+  }
+  .heading-2 {
+    font-family: $font2;
+    font-size: 4.5rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+    @apply text-white uppercase mb-6;
+  }
+  .heading-4 {
+    font-family: $font2;
+    text-transform: uppercase;
+    @apply text-left;
+    font-size: 3.2rem;
+    color: $dim-white;
+    letter-spacing: 1px;
+  }
+  .heading-5 {
+    font-family: $font1;
+    text-transform: capitalize;
+    @apply text-left text-6xl;
+    color: $dim-white;
+    letter-spacing: 6px;
+  }
+  .body-text {
+    font-family: $font1;
+    @apply lg:text-justify sm:leading-tight lg:leading-snug;
+    letter-spacing: 1.2px;
+    color: $dim-white;
+    font-size: 2.1rem;
+    line-height: 1.5;
+  }
+  .sub-heading-1 {
+    font-family: $font2;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  .sub-heading-2 {
+    font-family: $font1;
+    font-size: 1.7rem;
+    @apply text-gray-400;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+
+    .wrapper {
+      @apply flex flex-col w-4/5;
+
+      #hero-img {
+        @apply my-16;
+        transform: translate(0, 0);
+      }
+    }
+    .heading-1,
+    .heading-5,
+    .heading-2,
+    .heading-4,
+    .body-text {
+      @apply text-center;
+    }
+    .heading-1 {
+      font-size: 7rem;
+    }
+    .heading-5 {
+      font-size: 2.5rem;
+      line-height: 1.3;
+    }
+  }
+}
